@@ -13,10 +13,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Instalar dependências
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Buscar dados da B3
+        run: |
+          pip install requests
+          python scripts/fetch-b3-data.py public/data
+
+      - name: Instalar dependências Node
         run: npm install
 
-      - name: Fazer build
+      - name: Build
         run: npm run build
 
       - name: Publicar no GitHub Pages
