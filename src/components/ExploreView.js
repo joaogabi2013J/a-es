@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Search, Loader } from 'lucide-react';
-import { fetchAvailableTickers } from '../api/brapi';
+import { fetchAvailableTickers, fetchMultipleQuotes } from '../api/brapi';
 import QuoteCard from './QuoteCard';
-import { fetchMultipleQuotes } from '../api/brapi';
 import './ExploreView.css';
 
 const SEGMENTS = ['Todos', 'Ações', 'FII', 'BDR', 'ETF'];
@@ -35,22 +34,22 @@ export default function ExploreView({ onSelectTicker }) {
     })
     .slice(0, 100);
 
-  const handleSearch = () => {
-    if (!filtered.length) return;
-    const syms = filtered.slice(0, 20).map(t => t.stock || t);
+  const handleSearch = useCallback((items) => {
+    if (!items.length) return;
+    const syms = items.slice(0, 20).map(t => t.stock || t);
     setLoadingQuotes(true);
     fetchMultipleQuotes(syms)
       .then(data => setQuotes(data))
       .catch(() => {})
       .finally(() => setLoadingQuotes(false));
-  };
+  }, []);
 
   useEffect(() => {
     if (search.length > 0) {
-      const t = setTimeout(handleSearch, 500);
+      const t = setTimeout(() => handleSearch(filtered), 500);
       return () => clearTimeout(t);
     }
-  }, [search, filtered.length]);
+  }, [search, filtered, handleSearch]);
 
   return (
     <div className="explore-view">

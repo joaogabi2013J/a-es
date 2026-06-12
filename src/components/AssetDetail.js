@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, RefreshCw, TrendingUp, TrendingDown, ExternalLink } from 'lucide-react';
+import { ArrowLeft, RefreshCw, TrendingUp, TrendingDown } from 'lucide-react';
 import { useQuote } from '../hooks/useQuote';
 import PriceChart from './PriceChart';
 import DividendTable from './DividendTable';

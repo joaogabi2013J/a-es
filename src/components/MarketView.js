@@ -4,7 +4,6 @@ import { fetchMultipleQuotes } from '../api/brapi';
 import QuoteCard from './QuoteCard';
 import './MarketView.css';
 
-const INDICES = ['IBOV', 'IFIX', 'SMLL'];
 const TOP_STOCKS = ['PETR4', 'VALE3', 'ITUB4', 'BBDC4', 'WEGE3', 'RENT3', 'ABEV3', 'BBAS3', 'MGLU3', 'SUZB3', 'ELET3', 'RADL3'];
 
 export default function MarketView({ onSelectTicker }) {

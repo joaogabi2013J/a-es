@@ -1,7 +1,6 @@
 const BASE_URL = 'https://brapi.dev/api';
 const TOKEN = 'oL8DNUikcZUzBB1mWSLvUv';
 
-const headers = { Authorization: `Bearer ${TOKEN}` };
 
 export async function fetchQuote(ticker) {
   const res = await fetch(
