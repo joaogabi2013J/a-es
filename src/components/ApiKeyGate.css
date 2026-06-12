@@ -1,0 +1,124 @@
+.gate-overlay {
+  position: fixed;
+  inset: 0;
+  background: #071018;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 999;
+}
+
+.gate-card {
+  background: #0d1f2d;
+  border: 1px solid #1e3448;
+  border-radius: 16px;
+  padding: 36px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.gate-icon {
+  color: #00d4ff;
+  margin-bottom: 16px;
+}
+
+.gate-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.gate-card > p {
+  color: #7799bb;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.gate-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.gate-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: #8899aa;
+}
+
+.gate-step span:first-child {
+  background: #00d4ff20;
+  border: 1px solid #00d4ff44;
+  color: #00d4ff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.gate-step a {
+  color: #00d4ff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.gate-step strong { color: #ccdde8; }
+
+.gate-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.gate-input {
+  flex: 1;
+  background: #071018;
+  border: 1px solid #1e3448;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: monospace;
+}
+
+.gate-input:focus { border-color: #00d4ff55; }
+.gate-input::placeholder { color: #334455; font-family: inherit; }
+
+.gate-btn {
+  background: #00d4ff;
+  border: none;
+  color: #071018;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.gate-btn:hover { opacity: 0.9; }
+.gate-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.gate-note {
+  font-size: 0.75rem;
+  color: #334455;
+  margin: 0;
+}

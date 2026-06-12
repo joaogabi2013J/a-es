@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Search, Loader } from 'lucide-react';
 import { fetchAvailableTickers, fetchMultipleQuotes } from '../api/brapi';
 import QuoteCard from './QuoteCard';
@@ -21,20 +21,21 @@ export default function ExploreView({ onSelectTicker }) {
       .finally(() => setLoadingList(false));
   }, []);
 
-  const filtered = tickers
+  const filtered = useMemo(() => tickers
     .filter(t => {
       const sym = t.stock || t;
       const q = search.toUpperCase();
       if (q && !sym.includes(q)) return false;
-      if (segment === 'FII') return sym.endsWith('11');
+      if (segment === 'FII') return sym.endsWith('11') && !['BOVA11','SMAL11','IVVB11','HASH11','SPXI11','DIVO11','FIND11','MATB11','GOVB11'].includes(sym);
       if (segment === 'BDR') return sym.endsWith('34') || sym.endsWith('32') || sym.endsWith('33') || sym.endsWith('35');
-      if (segment === 'ETF') return ['BOVA11','SMAL11','IVVB11','HASH11','SPXI11'].includes(sym);
+      if (segment === 'ETF') return ['BOVA11','SMAL11','IVVB11','HASH11','SPXI11','DIVO11','FIND11','MATB11','GOVB11'].includes(sym);
       if (segment === 'Ações') return !sym.endsWith('11') && !sym.endsWith('34');
       return true;
     })
-    .slice(0, 100);
+    .slice(0, 100),
+  [tickers, search, segment]);
 
-  const handleSearch = useCallback((items) => {
+  const doSearch = useCallback((items) => {
     if (!items.length) return;
     const syms = items.slice(0, 20).map(t => t.stock || t);
     setLoadingQuotes(true);
@@ -45,11 +46,10 @@ export default function ExploreView({ onSelectTicker }) {
   }, []);
 
   useEffect(() => {
-    if (search.length > 0) {
-      const t = setTimeout(() => handleSearch(filtered), 500);
-      return () => clearTimeout(t);
-    }
-  }, [search, filtered, handleSearch]);
+    if (!search) { setQuotes([]); return; }
+    const t = setTimeout(() => doSearch(filtered), 600);
+    return () => clearTimeout(t);
+  }, [search, filtered, doSearch]);
 
   return (
     <div className="explore-view">
