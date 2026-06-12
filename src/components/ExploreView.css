@@ -1,0 +1,135 @@
+.explore-view {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ev-header {
+  margin-bottom: 20px;
+}
+
+.ev-header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.ev-header p {
+  color: #446688;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.ev-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ev-search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.ev-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #446688;
+}
+
+.ev-search {
+  width: 100%;
+  background: #0d1f2d;
+  border: 1px solid #1e3448;
+  color: #ffffff;
+  padding: 10px 40px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.ev-search:focus { border-color: #00d4ff55; }
+.ev-search::placeholder { color: #334455; }
+
+.ev-loader {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00d4ff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.ev-segments {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.ev-seg-btn {
+  background: #0d1f2d;
+  border: 1px solid #1e3448;
+  color: #556677;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.ev-seg-btn:hover { color: #aabbcc; border-color: #2a4560; }
+
+.ev-seg-btn.active {
+  background: #00d4ff20;
+  border-color: #00d4ff55;
+  color: #00d4ff;
+}
+
+.ev-loading {
+  color: #446688;
+  text-align: center;
+  padding: 60px;
+}
+
+.ev-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.ev-ticker-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ev-ticker-chip {
+  background: #0d1f2d;
+  border: 1px solid #1e3448;
+  color: #aabbcc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.ev-ticker-chip:hover {
+  border-color: #00d4ff55;
+  color: #00d4ff;
+  background: #00d4ff10;
+}

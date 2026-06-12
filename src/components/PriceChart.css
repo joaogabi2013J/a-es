@@ -1,0 +1,77 @@
+.price-chart {
+  background: #0a1520;
+  border-radius: 10px;
+  padding: 12px 0 0;
+}
+
+.pc-toolbar {
+  display: flex;
+  gap: 4px;
+  padding: 0 16px 12px;
+}
+
+.pc-range-btn {
+  background: transparent;
+  border: 1px solid #1e3448;
+  color: #446688;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.pc-range-btn:hover {
+  border-color: #00d4ff44;
+  color: #aabbcc;
+}
+
+.pc-range-btn.active {
+  background: #00d4ff20;
+  border-color: #00d4ff55;
+  color: #00d4ff;
+}
+
+.pc-loading {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #446688;
+  font-size: 0.85rem;
+}
+
+.chart-tooltip {
+  background: #0d1f2d;
+  border: 1px solid #1e3448;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+}
+
+.ct-date {
+  color: #446688;
+  margin-bottom: 4px;
+  font-size: 0.72rem;
+}
+
+.ct-price {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ct-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #8899aa;
+  margin-top: 2px;
+}
+
+.ct-row span:last-child {
+  color: #aabbcc;
+  font-weight: 500;
+}

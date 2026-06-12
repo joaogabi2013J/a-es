@@ -1,0 +1,60 @@
+.dividend-section {
+  margin-top: 20px;
+  background: #0d1f2d;
+  border: 1px solid #1e3448;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.dividend-section h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #446688;
+  margin: 0 0 12px;
+}
+
+.dividend-table-wrap {
+  overflow-x: auto;
+}
+
+.dividend-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.dividend-table th {
+  text-align: left;
+  padding: 8px 12px;
+  color: #446688;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #1e3448;
+}
+
+.dividend-table td {
+  padding: 8px 12px;
+  color: #aabbcc;
+  border-bottom: 1px solid #0d2035;
+}
+
+.dividend-table tr:last-child td { border-bottom: none; }
+
+.dividend-table tr:hover td { background: #0f2438; }
+
+.div-type {
+  background: #00d4ff15;
+  color: #00d4ff;
+  border: 1px solid #00d4ff33;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.div-value {
+  color: #00e676;
+  font-weight: 600;
+}

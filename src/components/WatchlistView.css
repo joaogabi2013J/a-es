@@ -1,0 +1,84 @@
+.watchlist-view {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.wv-header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.wv-header p {
+  color: #446688;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.wv-add-form {
+  display: flex;
+  gap: 8px;
+}
+
+.wv-input {
+  background: #0d1f2d;
+  border: 1px solid #1e3448;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 120px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.wv-input:focus { border-color: #00d4ff55; }
+.wv-input::placeholder { color: #334455; font-weight: 400; letter-spacing: 0; }
+
+.wv-add-btn {
+  background: #00d4ff20;
+  border: 1px solid #00d4ff44;
+  color: #00d4ff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.wv-add-btn:hover { background: #00d4ff30; }
+
+.wv-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #446688;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.wv-loading .spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.wv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
